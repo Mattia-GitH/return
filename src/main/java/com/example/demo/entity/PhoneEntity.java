@@ -23,7 +23,7 @@ public class PhoneEntity {
     }
 
     public void setImei(int imei) {
-        this.imei = imei;
+        this.imei = this.imei;
     }
 
     public String getModel() {
