@@ -1,7 +1,6 @@
 package com.example.demo.dto;
 
 import com.example.demo.entity.ReplacementEntity;
-import com.example.demo.model.PhoneModel;
 import com.example.demo.model.ReplacementModel;
 import org.springframework.stereotype.Component;
 
@@ -21,6 +20,18 @@ public class ReplacementDto {
 
     public List<ReplacementModel> listToModels (List<ReplacementEntity> entityList){
         return entityList.stream().map(this::toModel).collect(Collectors.toList());
+    }
+
+    public ReplacementEntity toEntity(ReplacementModel model){
+        ReplacementEntity entity = new ReplacementEntity();
+        entity.setOld_imei(model.getOld_imei());
+        entity.setNew_imei(model.getNew_imei());
+        entity.setNote(model.getNote());
+        return entity;
+    }
+
+    public List<ReplacementEntity> listToEntities (List<ReplacementModel> modelsList){
+        return modelsList.stream().map(this::toEntity).collect(Collectors.toList());
     }
 
 
