@@ -9,7 +9,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "TBL_orders")
-public class OredersEntity {
+public class OrdersEntity {
 
     @Id
     private int id;
@@ -29,7 +29,7 @@ public class OredersEntity {
     @Column(name = "NOTE")
     private String note;
 
-    public OredersEntity(int id, Date date, String operator, int imei, boolean verified, String note) {
+    public OrdersEntity(int id, Date date, String operator, int imei, boolean verified, String note) {
         this.id = id;
         this.date = date;
         this.operator = operator;
@@ -38,7 +38,7 @@ public class OredersEntity {
         this.note = note;
     }
 
-    public OredersEntity() {
+    public OrdersEntity() {
     }
 
     public int getId() {
@@ -93,7 +93,7 @@ public class OredersEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        OredersEntity that = (OredersEntity) o;
+        OrdersEntity that = (OrdersEntity) o;
         return id == that.id &&
                 imei == that.imei &&
                 verified == that.verified &&
